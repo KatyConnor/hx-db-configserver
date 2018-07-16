@@ -30,7 +30,7 @@ spring:
       connection-timeout: 30000
       connection-test-query: SELECT 1
       data-source-class-name: com.sybase.jdbc4.jdbc.SybDataSource
-#    type: com.zaxxer.hikari.HikariDataSource
+  #   type: com.zaxxer.hikari.HikariDataSource
 
 encrypt:
   key: 2825523288@qq.com
