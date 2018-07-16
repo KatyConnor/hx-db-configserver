@@ -1,0 +1,46 @@
+server:
+  port: 8032
+spring:
+  profiles:
+    active: jdbc
+  application:
+    name: jdbc-config-server
+  cloud:
+    config:
+      server:
+       jdbc:
+         sql: SELECT `key`, `value` from properties where application = ? and profile = ? and label = ?
+  security:
+    user:
+      name: admin
+      password: 123456
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://hx.mysql.cn:3316/config_server?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useAffectedRows=true
+      username: root
+      password: root,./159357
+
+      minimum-idle: 5
+      maximum-pool-size: 150
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: datebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+      data-source-class-name: com.sybase.jdbc4.jdbc.SybDataSource
+#    type: com.zaxxer.hikari.HikariDataSource
+
+encrypt:
+  key: 2825523288@qq.com
+management:
+  endpoints:
+    enabled-by-default: true
+  endpoint:
+    refresh:
+      enabled: true
+
+
+
+

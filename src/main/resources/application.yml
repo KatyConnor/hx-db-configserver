@@ -1,0 +1,23 @@
+#spring:
+#  datasource:
+#    type: com.zaxxer.hikari.HikariDataSource
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:123456@hx.eureka1.cn/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 90  #续约到期时间(单位 S)默认是90S
+    lease-renewal-interval-in-seconds: 30     # 续约更新时间间隔（默认30秒）
+    instance-id: ${spring.application.name}:${server.port}
+
+#spring:
+#  flyway:
+#    locations: /schema
+
+
+
+
